@@ -1,5 +1,4 @@
 DEVICE="/dev/sdc"
 PART="${DEVICE}1"
 MOUNT_POINT="/mnt/usbbackup"
-KNOWN_FILE="/etc/tes_backup_to_usb/known_serials"
 SOURCE_DIR="/mnt/pool/data"

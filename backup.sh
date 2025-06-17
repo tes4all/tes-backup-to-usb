@@ -1,19 +1,22 @@
 #!/bin/bash
 
+LOG_FILE="/var/log/tes_backup_to_usb.log"
+KNOWN_FILE="/etc/tes_backup_to_usb/known_serials"
+
+echo "=== Backup START $(date) ===" >> "$LOG_FILE"
+
 CONFIG="/etc/tes_backup_to_usb/config"
 if [ ! -f "$CONFIG" ]; then
-  echo "Missing config file: $CONFIG"
+  echo "Missing config file: $CONFIG" >> "$LOG_FILE"
   exit 1
 fi
-source "$CONFIG"
 
-LOG_FILE="/var/log/tes_backup_to_usb.log"
+source "$CONFIG"
 
 mkdir -p "$(dirname "$KNOWN_FILE")"
 touch "$KNOWN_FILE"
 mkdir -p "$MOUNT_POINT"
 
-echo "=== Backup START $(date) ===" >> "$LOG_FILE"
 
 SERIAL=$(udevadm info --query=all --name=$DEVICE | grep ID_SERIAL= | cut -d= -f2)
 

@@ -4,7 +4,7 @@ set -e
 
 REPO_ZIP_URL="https://github.com/tes4all/tes-backup-to-usb/archive/refs/heads/main.zip"
 TMP_DIR="/tmp/tes_backup_to_usb_install"
-INSTALL_DIR="/etc/tes-backup-to-usb"
+INSTALL_DIR="/etc/tes_backup_to_usb"
 LOGROTATE_CONFIG="/etc/logrotate.d/tes_backup_to_usb"
 
 echo "Downloading..."
