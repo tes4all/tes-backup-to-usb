@@ -1,13 +1,13 @@
 #!/bin/bash
 
-CONFIG="/etc/usb-backup/config"
+CONFIG="/etc/tes_backup_to_usb/config"
 if [ ! -f "$CONFIG" ]; then
   echo "Missing config file: $CONFIG"
   exit 1
 fi
 source "$CONFIG"
 
-LOG_FILE="/var/log/usb_backup.log"
+LOG_FILE="/var/log/tes_backup_to_usb.log"
 
 mkdir -p "$(dirname "$KNOWN_FILE")"
 touch "$KNOWN_FILE"
