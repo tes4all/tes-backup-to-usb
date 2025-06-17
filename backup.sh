@@ -11,7 +11,7 @@ if [ ! -f "$CONFIG" ]; then
   exit 1
 fi
 
-source "$CONFIG"
+. "$CONFIG"
 
 mkdir -p "$(dirname "$KNOWN_FILE")"
 touch "$KNOWN_FILE"
